@@ -7,12 +7,13 @@
   <title>Arfani | Personal Web</title>
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <!-- Scripts -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="resources/jquery.dropotron-1.0.js"></script>
-  <script type="text/javascript" src="resources/jquery.slidertron-1.1.js"></script>
-  <script type="text/javascript" src="assets/resources/index.js" defer></script>
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="resources/jquery.dropotron-1.0.js"></script> -->
+  <!-- <script type="text/javascript" src="resources/jquery.slidertron-1.1.js"></script> -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 </head>
 
 <body>
@@ -20,33 +21,37 @@
     <div class="header-logo">
       <img src="/assets/images/logo-navbar.png" alt="Logo">
     </div>
-    <ul class="navbar-container">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li class="dropdown">
-        <a href="#projects">Projects</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">UI/UX Design</a></li>
-          <li><a href="#">AI & Data Science</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#blog">Blog</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Quora</a></li>
-          <li><a href="#">Medium</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#contact">Contact</a>
-        <ul class="dropdown-content">
-          <li><a href="#">Linkedin</a></li>
-          <li><a href="#">Github</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="navbar-menu">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="navbar-container">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#projects">Projects</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">AI & Data Science</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#blog">Blog</a>
+          <ul class="dropdown-content">
+            <li><a href="#" target="_blank">Quora</a></li>
+            <li><a href="#" target="_blank">Medium</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#contact">Contact</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="#">Github</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
   <header>
     <div class="hero-content">
@@ -58,17 +63,22 @@
   <main>
     <div class="content">
       <section id="about">
-        <h2>Who Am I?</h2>
-        <p>As a final-year Informatics Engineering student at Hasanuddin University, I bring a passion for technology
-          and a diverse
-          skill set to every project. Over the past three years, I’ve honed my expertise in Full Stack Web Development,
-          mastering
-          technologies like HTML, CSS, JavaScript, Python, Node.js, and PHP. My journey also includes leadership roles
-          where I’ve
-          managed teams and led initiatives that inspire creative problem-solving. Whether it’s building user-friendly
-          websites or
-          leveraging data through AI, I’m committed to delivering impactful solutions that drive real-world change.</p>
+        <div class="about-wrapper">
+          <h2>Who Am I?</h2>
+          <p>I bring a passion for technology
+            and a diverse
+            skill set to every project. Over the past three years, I’ve honed my expertise in Full Stack Web
+            Development,
+            mastering
+            technologies like HTML, CSS, JavaScript, Python, Node.js, and PHP. My journey also includes leadership roles
+            where I’ve
+            managed teams and led initiatives that inspire creative problem-solving. Whether it’s building user-friendly
+            websites or
+            leveraging data through AI, I’m committed to delivering impactful solutions that drive real-world change.
+          </p>
+        </div>
       </section>
+
       <section id="gallery" class="gallery">
         <h2>Image Gallery</h2>
         <div class="slideshow-container">
@@ -120,49 +130,73 @@
           </div>
           <div class="column">
             <img class="demo cursor" src="/assets/images/gallery/img_snow.jpg" style="width:100%"
-              onclick="currentSlide(2)" alt="Cinque Terre">
+              onclick="currentSlide(2)" alt="Snowy Mountains">
           </div>
           <div class="column">
             <img class="demo cursor" src="/assets/images/gallery/img_nature.jpg" style="width:100%"
-              onclick="currentSlide(3)" alt="Mountains and fjords">
+              onclick="currentSlide(3)" alt="Nature and sunrise">
           </div>
           <div class="column">
             <img class="demo cursor" src="/assets/images/gallery/img_mountains.jpg" style="width:100%"
-              onclick="currentSlide(4)" alt="Northern Lights">
+              onclick="currentSlide(4)" alt="Mountain and fjords">
           </div>
           <div class="column">
             <img class="demo cursor" src="/assets/images/gallery/img_lights.jpg" style="width:100%"
-              onclick="currentSlide(5)" alt="Nature and sunrise">
+              onclick="currentSlide(5)" alt="Northen Lights">
           </div>
           <div class="column">
             <img class="demo cursor" src="/assets/images/gallery/img_5terre.jpg" style="width:100%"
-              onclick="currentSlide(6)" alt="Snowy Mountains">
+              onclick="currentSlide(6)" alt="Cinque Terre">
           </div>
         </div>
       </section>
+
       <section id="projects">
         <h2>Projects</h2>
         <p>Here are some of my recent projects:</p>
         <div class="card-container">
           <div class="card">
-            <h3><a href="#">Project 1</a></h3>
-            <p>A web application for managing tasks. This project uses React and Node.js to provide a seamless user
-              experience.</p>
+            <img src="/assets/images/projects/sikaderang.jpg" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">Sikaderang</a></h3>
+              <p>Sistem Informasi Kehadiran Mahasiswa Magang</p>
+            </div>
           </div>
           <div class="card">
-            <h3><a href="#">Project 2</a></h3>
-            <p>A portfolio website showcasing my work. Built with HTML, CSS, and JavaScript, this site highlights my
-              skills
-              and projects.</p>
+            <img src="/assets/images/projects/hijausantara.jpg" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">HijauSantara</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci qui dolor eveniet molestiae iusto
+                laboriosam similique quia delectus dicta architecto!</p>
+            </div>
           </div>
           <div class="card">
-            <h3><a href="#">Project 3</a></h3>
-            <p>An e-commerce platform with a custom CMS. Developed using Django and PostgreSQL, it offers a robust
-              solution
-              for online stores.</p>
+            <img src="/assets/images/projects/e-learning-smanel.jpg" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">E-Learning Smanel</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci qui dolor eveniet molestiae iusto
+                laboriosam similique quia delectus dicta architecto!</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/assets/images/projects/yamali.png" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">SI Yamali TB</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci qui dolor eveniet molestiae iusto
+                laboriosam similique quia delectus dicta architecto!</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/assets/images/projects/cafeology.jpg" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">Cafeology</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci qui dolor eveniet molestiae iusto
+                laboriosam similique quia delectus dicta architecto!</p>
+            </div>
           </div>
         </div>
       </section>
+
       <section id="blog">
         <h2>Insights & Updates</h2>
         <p>Stay updated with the latest trends in tech! From web development tips to AI breakthroughs, my blog is where
@@ -170,34 +204,62 @@
           practical advice, tutorials, and insights from my journey as a developer.</p>
         <div class="card-container">
           <div class="card">
-            <h3><a href="#">Blog 1</a></h3>
-            <p>A web application for managing tasks. This project uses React and Node.js to provide a seamless user
-              experience.</p>
+            <img src="/assets/images/blogs/php-vs-js.png" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">PHP vs JavaScript?</a></h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere odio tempora quaerat blanditiis eos
+                sapiente dolor quae inventore eligendi ut?</p>
+            </div>
           </div>
           <div class="card">
-            <h3><a href="#">Blog 2</a></h3>
-            <p>A portfolio website showcasing my work. Built with HTML, CSS, and JavaScript, this site highlights my
-              skills
-              and projects.</p>
+            <img src="/assets/images/blogs/vscode-shortcut.png" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">VS Code Shortcuts</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis reiciendis ea aliquam in sint
+                suscipit repudiandae deleniti nesciunt rem accusantium quibusdam, pariatur adipisci quo eveniet qui?
+                Architecto, aut magnam.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/assets/images/blogs/free-web-hosting.png" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">Free Web Hosting</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis reiciendis ea aliquam in sint
+                suscipit repudiandae deleniti nesciunt rem accusantium quibusdam, pariatur adipisci quo eveniet qui?
+                Architecto, aut magnam.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/assets/images/blogs/html-css.png" alt="Dummy 1" class="card-hero-image">
+            <div class="card-container">
+              <h3><a href="#">Learn HTML & CSS</a></h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis reiciendis ea aliquam in sint
+                suscipit repudiandae deleniti nesciunt rem accusantium quibusdam, pariatur adipisci quo eveniet qui?
+                Architecto, aut magnam.</p>
+            </div>
           </div>
         </div>
       </section>
     </div>
     <aside class="sidebar">
-      <h2>Welcome to My Corner of the Web</h2>
-      <img src="/assets/images/arfani-sidebar.png" alt="Profile" style="max-width: 200px;">
-      <p>I’m glad you’re here! Whether you’re looking for cutting-edge web solutions, insights into machine learning, or
-        just
-        want to connect, feel free to explore my work. You can also reach out to me directly through the links below for
-        collaborations, opportunities, or just to chat about tech!</p>
-      <p>Quick Links:</p>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#gallery">Image Gallery</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="sidebar-wrapper">
+        <h2>Welcome to My Corner of the Web</h2>
+        <img src="/assets/images/arfani-sidebar.png" alt="Profile" style="max-width: 200px;">
+        <p>I’m glad you’re here! Whether you’re looking for cutting-edge web solutions, insights into machine learning,
+          or
+          just
+          want to connect, feel free to explore my work. You can also reach out to me directly through the links below
+          for
+          collaborations, opportunities, or just to chat about tech!</p>
+        <p>Quick Links:</p>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#gallery">Image Gallery</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </aside>
   </main>
   <footer>
@@ -208,18 +270,24 @@
           feel
           free to reach out to me. I’d love to hear from you!</p>
         <div class="contact-info">
-          <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/johndoe">linkedin.com/in/johndoe</a></p>
-          <p>GitHub: <a href="https://github.com/johndoe">github.com/johndoe</a></p>
+          <a href="https://www.instagram.com/arfani.asr" target="_blank"><span class="iconify" data-icon="mdi:instagram"
+              data-width="30" data-height="30"></span></a>
+          <a href="https://www.linkedin.com/in/arfaniasra" target="_blank"><span class="iconify"
+              data-icon="mdi:linkedin" data-width="30" data-height="30"></a>
+          <a href="https://github.com/ArfaniAsra" target="_blank"><span class="iconify" data-icon="mdi:github"
+              data-width="30" data-height="30"></a>
         </div>
       </div>
-      <div class="footer-form">
+      <div class="footer-form" onsubmit="sendMail(); return false;">
         <form id="contactForm">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
 
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="4" required></textarea>
@@ -229,6 +297,8 @@
       </div>
     </div>
   </footer>
+  <script type="text/javascript" src="assets/resources/index.js"></script>
+
 </body>
 
 </html>

@@ -166,16 +166,20 @@ nav a {
   text-decoration: none;
 }
 
+.navbar-menu {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
 .navbar-container {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.navbar-container > li {
+.navbar-container li {
   position: relative;
 }
 
@@ -223,6 +227,60 @@ nav a {
 /* Show the dropdown menu on hover */
 .navbar-container > li:hover .dropdown-content {
   display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #575757;
+  padding: 14px 16px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-container li {
+    float: none;
+  }
+
+  .navbar-container li a,
+  .dropdown {
+    text-align: left;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #menu-toggle:checked + .hamburger + .navbar-container {
+    display: flex;
+  }
 }
 
 /* End of Navbar */
@@ -474,9 +532,19 @@ article {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   width: 250px;
   transition: transform 0.2s;
+}
+
+.card-hero-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -506,8 +574,15 @@ aside {
   background-color: #f9f9f9;
 }
 
+.about-wrapper,
+.sidebar-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .sidebar img {
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 /* Footer Styles */
@@ -542,7 +617,7 @@ footer {
 }
 
 .contact-info a {
-  color: #007bff;
+  color: #f9f9f9;
   text-decoration: none;
 }
 
@@ -575,6 +650,8 @@ footer {
 }
 
 .footer-form button[type="submit"] {
+  width: 50%;
+  margin: 0 auto;
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -612,7 +689,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   aside {
     width: 100%;
   }
